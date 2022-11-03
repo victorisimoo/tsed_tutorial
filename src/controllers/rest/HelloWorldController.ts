@@ -11,39 +11,36 @@ export class HelloWorldController {
     return "hello";
   }
   /**
-   * FUNCION PARA SUMAR DOS NUMEROS
-   * @param primerNumero 
-   * @param segundoNumero 
-   * @returns suma de los dos numeros
+   * @param firstNumber 
+   * @param secondNumber 
+   * @returns +
    */
-  sumarDosNumeros(primerNumero: number,segundoNumero: number){
-    return primerNumero + segundoNumero;
+  sumarDosNumeros(firstNumber: number,secondNumber: number){
+    return firstNumber + secondNumber;
   }
   /**
-   * FUNCION DARVUELTA - INVIERTE EL ORDEN DE LAS PALABRAS
-   * @param palabra - Palabra a ser volteada
-   * @returns palabra invertida
+   * @param phrase
+   * @returns phrase
    */
-  darVuelta(palabra:string){
-    var palabraSeparada = palabra.split("");
-    var darVueltaPal = palabraSeparada.reverse();
-    return darVueltaPal.join("");
+  turnPhrase(phrase:string){
+    var modifyPhrase = phrase.split("");
+    var turnPhrasePal = modifyPhrase.reverse();
+    return turnPhrasePal.join("");
   }
   /**
-   * FUNCION INVERTIR - CAMBIA LAS PALABRAS EN MAYUSCULAS POR MINUSCULAS Y VICEVERSA
-   * @param {string} palabra - palabra a ser cambiada
-   * @returns palabra cambiada
+   * @param {string} phrase
+   * @returns phrase
    */
-  invertir(palabra:string){
-    if(palabra[0] == palabra[0].toLowerCase()){
-      return this.cambiarMayusculas(palabra);
+  invertir(phrase:string){
+    if(phrase[0] == phrase[0].toLowerCase()){
+      return this.changeCapitalization(phrase);
     }
-    return this.cambiarMinusculas(palabra);
+    return this.changelowercase(phrase);
   }
-  cambiarMayusculas(palabra:string){
-    return palabra.toUpperCase();
+  changeCapitalization(phrase:string){
+    return phrase.toUpperCase();
   }
-  cambiarMinusculas(palabra:string){
-    return palabra.toLowerCase();
+  changelowercase(phrase:string){
+    return phrase.toLowerCase();
   }
 }

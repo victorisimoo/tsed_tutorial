@@ -20,21 +20,21 @@ describe("HelloWorldController", () => {
   // PRUEBA .TOBE 1
   it("1 + 1 es 2", () => {
     const instance = PlatformTest.get<HelloWorldController>(HelloWorldController);
-    const primerNumero = 1;
-    const segundoNumero = 1;
-    expect(instance.sumarDosNumeros(primerNumero,segundoNumero)).toBe(2);
+    const firstNumber = 1;
+    const secondNumber = 1;
+    expect(instance.sumarDosNumeros(firstNumber,secondNumber)).toBe(2);
   });
   // PRUEBA .TOBE 2
-  it("Dar vuelta a una palabra", () => {
+  it("Dar vuelta a una phrase", () => {
     const instance = PlatformTest.get<HelloWorldController>(HelloWorldController);
-    const palabra = "hola";
-    expect(instance.darVuelta(palabra)).toBe("aloh");
+    const phrase = "hola";
+    expect(instance.turnPhrase(phrase)).toBe("aloh");
   });
 
   // SPY ON
   it("Inspeccionar función", () => {
     const instance = PlatformTest.get<HelloWorldController>(HelloWorldController);
-    let x = jest.spyOn(instance, "cambiarMayusculas");
+    let x = jest.spyOn(instance, "changeCapitalization");
     instance.invertir("algo");
     expect(x).toBeCalled();
   });
@@ -42,7 +42,7 @@ describe("HelloWorldController", () => {
   // MOCK
   it("Inspeccionar función", () => {
     const instance = PlatformTest.get<HelloWorldController>(HelloWorldController);
-    let x = jest.spyOn(instance, "cambiarMayusculas").mockReturnValueOnce("xD");
+    let x = jest.spyOn(instance, "changeCapitalization").mockReturnValueOnce("xD");
     expect(instance.invertir("laboratorio")).toBe("xD");
     expect(instance.invertir("laboratorio")).toBe("LABORATORIO");
   });
